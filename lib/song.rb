@@ -50,10 +50,13 @@ class Song
   end
 
   def self.new_from_filename(string)
+    # artist, title = string[0..-5].split(" - ")
+    # the_object = create_by_name(title)
+    # the_object.artist_name = artist
+    # the_object
     artist, title = string[0..-5].split(" - ")
-    the_object = create_by_name(title)
-    the_object.artist_name = artist
-    the_object
+    create_by_name(title).artist_name = artist
+    find_by_name(title)
   end
 
   def self.create_from_filename(format)
